@@ -49,5 +49,11 @@ public class MainActivity extends Activity {
                 stopService(intent);
             }
         });
+
+
+        //当Service和访问者之间需要进行方法调用或交换数据的时候，就要用到绑定服务
+
+
+
     }
 }
