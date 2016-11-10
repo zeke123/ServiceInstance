@@ -13,6 +13,7 @@ public class MainActivity extends Activity {
     private Button mStartButton;
     private Button mStopButton;
     private Intent intent;
+    private Button mStartActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class MainActivity extends Activity {
         //option+command+k   抽取变量
         mStartButton = (Button) findViewById(R.id.start_service);
         mStopButton = (Button) findViewById(R.id.stop_service);
+        mStartActivity = (Button) findViewById(R.id.start_activity);
 
 
         //开启服务的按钮
@@ -50,10 +52,14 @@ public class MainActivity extends Activity {
             }
         });
 
+        mStartActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //当Service和访问者之间需要进行方法调用或交换数据的时候，就要用到绑定服务
-
-
-
     }
 }
