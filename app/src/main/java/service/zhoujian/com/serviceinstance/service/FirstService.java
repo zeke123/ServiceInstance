@@ -11,12 +11,16 @@ import android.util.Log;
  * 需要在清单文件中配置
  *
  *
- *
  * Android中有两种方式开启服务
  *
- * （1）通过startService（）方法启动的Service，访问者与Service之间没有关联，即访问者退出了，Sevice仍在运行
+ * （1） 通过startService（）方法启动的Service，访问者与Service之间没有关联，即访问者退出了，Sevice仍在运行
  *
- * （2）通过bindService（）方法启动Service，访问者与Sevice绑定在一起，访问者一旦退出，Sevice也就终止了
+ *       生命周期：onCreate（）--->onStartCommand()----->onDestroy()
+ *
+ * （2）  通过bindService（）方法启动Service，访问者与Sevice绑定在一起，访问者一旦退出，Sevice也就终止了
+ *
+ *       生命周期：onCreate（）--->onBind()----->onUnbind------>onDestroy()
+ *
  *
  */
 
