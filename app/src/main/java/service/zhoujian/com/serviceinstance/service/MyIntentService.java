@@ -15,7 +15,8 @@ import android.content.Intent;
     //当所有请求处理完成后，ntentService会自动停止，无需调用stopSelf（）方法来停止该Service
 
 
-public class MyIntentService extends IntentService {
+public class MyIntentService extends IntentService
+{
 
     private long mLong;
 
@@ -25,9 +26,9 @@ public class MyIntentService extends IntentService {
     }
 
     @Override
-    protected void onHandleIntent(Intent intent) {
+    protected void onHandleIntent(Intent intent)
+    {
         //模拟耗时任务，让线程暂停20s
-
         //这段代码要是放在普通Service中会阻塞主线程。ANR异常，放在IntentSevice中不会有问题
         mLong = System.currentTimeMillis() + 20 * 1000;
         while (System.currentTimeMillis()<mLong)
